@@ -7,13 +7,11 @@ const Inputfield = ({ label, ...props }) => {
     return (
         <>
             <div className='flex flex-col md:w-[500px] w-72'>
-                <label htmlFor={props.name}>{label}</label>
-                <div className='py-2'>
-                    <Input variant="filled"   {...field} {...props} />
-                </div>
+                <label className='font-medium text-gray-400' htmlFor={props.name}>{label}</label>
+                    <Input variant="filled" {...field} {...props} />
             </div>
             {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
+                <div className="error text-red-500 text-sm pl-4">{meta.error}</div>
             ) : null}
         </>
     )

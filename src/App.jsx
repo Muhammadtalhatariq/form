@@ -5,7 +5,10 @@ import SignupForm from './pages/SignupForm'
 const App = () => {
   return (
     <>
-      <SignupForm />
+    <div className='py-6'>
+    <SignupForm />
+    </div>
+     
     </>
   )
 }

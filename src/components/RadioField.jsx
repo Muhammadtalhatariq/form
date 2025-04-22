@@ -5,11 +5,11 @@ const RadioField = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
         <>
-            <label htmlFor={props.name}>
+            <label className='font-medium text-gray-400' htmlFor={props.name}>
                 <Field  {...field} {...props} /> {label}
             </label>
             {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
+                <div className="error text-red-500 text-sm pl-4">{meta.error}</div>
             ) : null}
         </>
     )

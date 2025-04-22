@@ -4,51 +4,9 @@ import { Formik, Form, Field, } from 'formik';
 import RadioField from '../components/RadioField';
 import SelectField from '../components/SelectField';
 import DatePicker from '../components/DatePicker';
-import * as Yup from 'yup';
+import { validate } from '../components/validate';
 
-const validate = Yup.object({
-  firstName: Yup.string()
-    .max(15, 'Must be 15 characters or less')
-    .required('Required'),
-  lastName: Yup.string()
-    .max(10, 'Must be 10 characters or less')
-    .required('Required'),
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Required'),
-  contact: Yup.string()
-    .min(11, 'Must be 11 characters')
-    .required('Required'),
-  age: Yup.string()
-    .required('Required'),
-  gender: Yup.string()
-    .oneOf(
-      ['male', 'female'],
-      'Invalid Gender Type'
-    )
-    .required('Required'),
-  job: Yup.string()
-    .oneOf(
-      ['intern', 'job'],
-      'Invalid Job Type'
-    )
-    .required('Required'),
-  location: Yup.string()
-    .oneOf(
-      ['pakistan', 'other'],
-      'Invalid location'
-    )
-    .required('Required'),
-  date: Yup.string()
-    .required('Required'),
-
-  ready: Yup.boolean()
-    .required('Required')
-    .oneOf([true], 'You must accept the terms and conditions.'),
-
-})
 const SignupForm = () => {
-
   return (
     <>
       <Formik
@@ -60,12 +18,10 @@ const SignupForm = () => {
           contact: '',
           gender: '',
           job: '',
-          loycation: '',
+          location: '',
           date: "",
           ready: ''
-
         }}
-
         validationSchema={validate}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -76,13 +32,12 @@ const SignupForm = () => {
         }
         validateOnMount={true}
       >
-        
         {formik => (
-          <div className='flex items-center justify-center  bg-amber-50 border border-black rounded-b-2xl'>
+          <div className='flex items-center justify-center'>
             <Form onSubmit={formik.handleSubmit}>
-              <div className='bg-gray-100 '>
-                <h1 className='md:text-2xl text-xl text-center font-semibold'>Sign Up</h1>
-                <div className='mx-4 '>
+              <div className='bg-gray-100 p-4 rounded-xl '>
+                <h1 className='md:text-3xl text-xl text-center font-semibold'>Sign Up</h1>
+                <div className='mx-4 space-y-2 flex- flex-col items-center justify-center'>
                   <Inputfield
                     label="First Name : "
                     name="firstName"
@@ -109,7 +64,7 @@ const SignupForm = () => {
                     type="number"
                   />
                   <div className='flex gap-4 items-center'>
-                    <p>Gender :</p>
+                    <p className='font-medium text-gray-400'>Gender :</p>
                     <div className='py-2 flex gap-4'>
                       <RadioField
                         label="Male"
@@ -117,7 +72,6 @@ const SignupForm = () => {
                         type="radio"
                         value="male"
                       />
-
                       <RadioField
                         label="female"
                         name="gender"
@@ -141,18 +95,20 @@ const SignupForm = () => {
                       <option value="other">other</option>
                     </SelectField>
                   </div>
-                  <div>
+                  <div className='flex gap-4 items-center justify-center'>
+                    <label className='font-medium text-gray-400'>BOD : </label>
                     <DatePicker
-                      type="Date"
+                      type="date"
                       name="date"
-                      value=""
+                      onChange={formik.handleChange}
+                      value={formik.values.firstName}
+                      onBlur={formik.handleBlur}
                     />
                   </div>
-
                   <div>
                     <label className='flex gap-3 items-center'>
                       <Field type="checkbox" name="ready" />
-                      <p>Ready For Submit</p>
+                      <p className='font-medium text-gray-400'>Ready For Submit</p>
                     </label>
                   </div>
                 </div>
@@ -161,19 +117,13 @@ const SignupForm = () => {
                 <button type="button"
                   onClick={() => formik.resetForm()}
                   className='py-2 px-4  hover:bg-green-500 bg-green-200 rounded-xl font-semibold hover:text-white duration-500'>Reset</button>
-                <button
-                  disabled={
-                    !formik.isValid
-                  }
-                  className='py-2 px-4  hover:bg-green-500 bg-green-400 rounded-xl font-semibold hover:text-white duration-500' type='submit'> {formik.isSubmitting 
-                    ? 'Loading…' 
-                    : 'Submit'}</button>
+                <button disabled={!formik.isValid}
+                  className='py-2 px-4  hover:bg-green-500 bg-green-400 rounded-xl font-semibold hover:text-white duration-500' type='submit'> {formik.isSubmitting
+                    ? 'Loading…' : 'Submit'}</button>
               </div>
             </Form>
           </div>
-
         )}
-
       </Formik>
 
     </>
