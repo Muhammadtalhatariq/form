@@ -34,10 +34,10 @@ export const validate = Yup.object({
       'Invalid location'
     )
     .required('Required'),
-  date: Yup.date()
+  date: Yup.mixed()
     .required('Required'),
 
   ready: Yup.boolean()
-    .required('Required')
+    .required('Required.')
     .oneOf([true], 'You must accept the terms and conditions.'),
 })
