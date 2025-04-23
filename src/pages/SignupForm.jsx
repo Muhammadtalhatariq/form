@@ -1,13 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Inputfield from '../components/inputfield'
-import { Formik, Form, Field, } from 'formik';
+import { Formik, Form,  } from 'formik';
 import RadioField from '../components/RadioField';
 import SelectField from '../components/SelectField';
 import DatePicker from '../components/DatePicker';
 import { validate } from '../components/validate';
 import { useTheme } from '../Context/ThemeContext';
-import { CiDark } from "react-icons/ci";
-import { CiLight } from "react-icons/ci";
+import { CiDark ,CiLight } from "react-icons/ci";
 import Cheakbox from '../components/Cheakbox';
 
 const SignupForm = () => {
@@ -32,7 +31,6 @@ const SignupForm = () => {
         onSubmit={(values) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
-
           }, 2000);
 
         }

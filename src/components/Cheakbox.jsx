@@ -3,11 +3,12 @@ import { Field } from 'formik';
 import { useField } from 'formik';
 const Cheakbox = ({ label, ...props }) => {
   const [field, meta] = useField(props)
+  console.log(field,"this is field");
   return (
     <>
-      <div className='flex flex-col' role="group" aria-labelledby="checkbox-group">
+      <div className='flex flex-col' role="group" aria-labelledby="checkbox-group ">
         <label className='flex gap-4'>
-          <Field type="checkbox" {...field} {...props} />
+          <Field type="checkbox" checked={field.value} {...field} {...props} />
           <div className='mx-4 '> {label}</div>
         </label>
         <div>
