@@ -9,10 +9,10 @@ import { useTheme } from '../Context/ThemeContext';
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import Cheakbox from '../components/Cheakbox';
+
 const SignupForm = () => {
   const [theme, setTheme] = useTheme()
   console.log(theme);
-
   return (
     <>
       <Formik
@@ -29,20 +29,18 @@ const SignupForm = () => {
           ready: false,
         }}
         validationSchema={validate}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
+
           }, 2000);
+
         }
         }
         validateOnMount={true}
       >
         {formik => (
           <div className='flex flex-col items-center justify-center '>
-
-
-
             <div>
               <Form onSubmit={formik.handleSubmit}>
                 <div className={`p-4 rounded-xl ${theme == "dark" ? "bg-neutral-700 border-2 border-white text-gray-400" : "bg-white  border border-black text-gray-400"}`}  >
@@ -52,7 +50,6 @@ const SignupForm = () => {
                       <div
                         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                         className={` absolute left-10 -top-2 ${theme === "light" ? "" : "opacity-1"} cursor-pointer`}
-
                       >
                         <CiDark size={25} />
                       </div>
@@ -62,10 +59,7 @@ const SignupForm = () => {
                       >
                         <CiLight size={25} />
                       </div>
-
-
                     </div>
-                    {/* <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>{theme}</button> */}
                   </div>
                   <div className='mx-4 space-y-2 flex- flex-col items-center justify-center'>
                     <Inputfield
@@ -127,7 +121,7 @@ const SignupForm = () => {
                     <div className='md:flex md:gap-4'>
                       <label className='font-medium '>BOD : </label>
                       <DatePicker
-                      type="date"
+                        type="date"
                         name="date"
                       />
                     </div>
@@ -151,7 +145,6 @@ const SignupForm = () => {
           </div>
         )}
       </Formik>
-
     </>
   )
 }

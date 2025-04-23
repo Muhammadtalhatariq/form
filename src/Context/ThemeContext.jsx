@@ -7,6 +7,7 @@ const ThemeContext = ({ children }) => {
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
     const element = document.documentElement;
+
     useEffect(() => {
         if (theme === "dark") {
             element.classList.add("dark");
