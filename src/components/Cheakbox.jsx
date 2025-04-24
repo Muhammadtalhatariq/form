@@ -3,7 +3,6 @@ import { Field } from 'formik';
 import { useField } from 'formik';
 const Cheakbox = ({ label, ...props }) => {
   const [field, meta] = useField(props)
-  console.log(field,"this is field");
   return (
     <>
       <div className='flex flex-col' role="group" aria-labelledby="checkbox-group ">
@@ -12,12 +11,12 @@ const Cheakbox = ({ label, ...props }) => {
           <div className='mx-4 '> {label}</div>
         </label>
         <div>
-        {meta.touched && meta.error ? (
-          <div className="error text-red-500 text-sm">{meta.error}</div>
-        ) : null}
+          {meta.touched && meta.error ? (
+            <div className="error text-red-500 text-sm">{meta.error}</div>
+          ) : null}
+        </div>
       </div>
-      </div>
-    
+
     </>
   )
 }
