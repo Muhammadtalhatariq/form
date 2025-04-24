@@ -6,7 +6,7 @@ const Cheakbox = ({ label, ...props }) => {
   return (
     <>
       <div className='flex flex-col' role="group" aria-labelledby="checkbox-group ">
-        <label className='flex gap-4'>
+        <label className='flex gap-4 '>
           <Field type="checkbox" checked={field.value} {...field} {...props} />
           <div className='mx-4 '> {label}</div>
         </label>

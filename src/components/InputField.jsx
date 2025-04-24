@@ -11,7 +11,7 @@ const Inputfield = ({ label, ...props }) => {
                     <Input variant="filled" {...field} {...props} />
             </div>
             {meta.touched && meta.error ? (
-                <div className="error text-red-500 text-sm pl-4">{meta.error}</div>
+                <div className="error text-red-500 text-sm">{meta.error}</div>
             ) : null}
         </>
     )

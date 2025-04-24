@@ -1,12 +1,12 @@
 import React from 'react'
 import Inputfield from '../components/inputfield'
-import { Formik, Form,  } from 'formik';
+import { Formik, Form, } from 'formik';
 import RadioField from '../components/RadioField';
 import SelectField from '../components/SelectField';
 import DatePicker from '../components/DatePicker';
 import { validate } from '../components/validate';
 import { useTheme } from '../Context/ThemeContext';
-import { CiDark ,CiLight } from "react-icons/ci";
+import { CiDark, CiLight } from "react-icons/ci";
 import Cheakbox from '../components/Cheakbox';
 
 const SignupForm = () => {
@@ -59,7 +59,7 @@ const SignupForm = () => {
                       </div>
                     </div>
                   </div>
-                  <div className='mx-4 space-y-2 flex- flex-col items-center justify-center'>
+                  <div className='mx-4 space-y-1 flex- flex-col items-center justify-center'>
                     <Inputfield
                       label="First Name : "
                       name="firstName"
@@ -71,7 +71,7 @@ const SignupForm = () => {
                       type="text"
                     />
                     <Inputfield
-                      label="E-mail : "
+                      label="Email : "
                       name="email"
                       type="email"
                     />
@@ -85,39 +85,33 @@ const SignupForm = () => {
                       name="age"
                       type="number"
                     />
+                 
                     <div className='flex gap-4 items-center'>
                       <p className='font-medium '>Gender :</p>
-                      <div name="gender" className='py-2 flex gap-4'>
-                        <RadioField
-                          label="Male"
-                          name="gender"
-                          type="radio"
-                          value="male"
-                        />
-                        <RadioField
-                          label="female"
-                          name="gender"
-                          type="radio"
-                          value="female"
-                        />
-                      </div>
+                   <RadioField
+                   name="gender"
+                 
+                   />
                     </div>
+                   
+                    
                     <div>
                       <SelectField label="Job Type :" name="job">
-                        <option value="">Select a job type</option>
+                        <option value=""></option>
                         <option value="intern">Intern</option>
                         <option value="job">Job</option>
                       </SelectField>
                     </div>
+                   
                     <div>
                       <SelectField label="Location :" name="location">
-                        <option value="">Select your Location</option>
+                        <option value=""></option>
                         <option value="pakistan">Pakistan</option>
-                        <option value="other">other</option>
+                        <option value="other">Other</option>
                       </SelectField>
                     </div>
-                    <div className='md:flex md:gap-4'>
-                      <label className='font-medium '>BOD : </label>
+                    <div className=' md:gap-4'>
+                      <label className='font-medium '>DOB : </label>
                       <DatePicker
                         type="date"
                         name="date"
@@ -125,7 +119,7 @@ const SignupForm = () => {
                     </div>
                     <div>
                       <label className='flex gap-3 items-center'>
-                        <Cheakbox name="ready" label="ready for submit" />
+                        <Cheakbox name="ready" label="Ready for submit" />
                       </label>
                     </div>
                   </div>
@@ -135,7 +129,7 @@ const SignupForm = () => {
                       className='py-2 px-4 hover:bg-green-500 bg-green-200 rounded-xl font-semibold hover:text-white duration-500'>Reset</button>
                     <button
                       className='py-2 px-4 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-xl' type='submit'>
-                      submit</button>
+                      Submit</button>
                   </div>
                 </div>
               </Form>

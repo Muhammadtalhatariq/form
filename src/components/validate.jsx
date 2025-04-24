@@ -2,40 +2,42 @@ import * as Yup from 'yup';
 
 export const validate = Yup.object({
   firstName: Yup.string()
+  .trim()
+    .matches(/^[A-Za-z]+$/, 'Only alphabets are allowed')
     .max(15, 'Must be 15 characters or less')
-    .required('Required'),
+    .required('Please enter your first name'),
   lastName: Yup.string()
+    .matches(/^[A-Za-z]+$/, 'Only alphabets are allowed')
     .max(10, 'Must be 10 characters or less')
-    .required('Required'),
+    .required('Please enter your last name'),
   email: Yup.string()
     .email('Invalid email address')
-    .required('Required'),
+    .required('Please enter your email address'),
   contact: Yup.string()
     .min(11, 'Must be 11 characters ')
-    .max(15, "15 characters or less")
-    .required('Required'),
+    .required('Please enter your contact number'),
   age: Yup.string()
-    .required('Required'),
+    .required('Please enter your age'),
   gender: Yup.string()
     .oneOf(
       ['male', 'female'],
       'Invalid Gender Type'
     )
-    .required('Required'),
+    .required('Please select your gender'),
   job: Yup.string()
     .oneOf(
       ['intern', 'job'],
       'Invalid Job Type'
     )
-    .required('Required'),
+    .required('Please select your job type'),
   location: Yup.string()
     .oneOf(
       ['pakistan', 'other'],
       'Invalid location'
     )
-    .required('Required'),
+    .required('Please select your location'),
   date: Yup.mixed()
-    .required('Required'),
+    .required('Please enter your date of birth'),
 
   ready: Yup.boolean()
     .required('Required.')
