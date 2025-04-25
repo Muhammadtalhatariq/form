@@ -15,8 +15,6 @@ const RadioField = ({ label, ...props }) => {
     <>
       <div className=''>
       <div>
-   
-           <div >
            <Radio.Group
                name={field.name}
                onChange={handleChange}
@@ -26,9 +24,9 @@ const RadioField = ({ label, ...props }) => {
               <Radio value="male"><span className={`${theme == "dark" ? " text-white" : " text-black"}`}>Male</span></Radio>
               <Radio  value="female"><span className={`${theme == "dark" ? " text-white" : " text-black"}`}>Female</span></Radio>
             </Radio.Group>
-           </div>
+          
         </div>
-        <div >
+        <div>
           <label htmlFor={props.name}> </label>
           <div>
           {meta.touched && meta.error ? (
