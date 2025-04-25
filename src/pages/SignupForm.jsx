@@ -85,9 +85,9 @@ const SignupForm = () => {
                       name="age"
                       type="number"
                     />
-
+ <p >Gender :</p>
                     <div className='flex gap-4 items-center'>
-                      <p >Gender :</p>
+                     
                       <RadioField
                         name="gender"
                       />

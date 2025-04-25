@@ -13,10 +13,11 @@ const RadioField = ({ label, ...props }) => {
   };
   return (
     <>
-      <div className='flex flex-col'>
-        <div>
-          <label className=' block' htmlFor={props.name}>
-            <Radio.Group
+      <div className=''>
+      <div>
+   
+           <div >
+           <Radio.Group
                name={field.name}
                onChange={handleChange}
                value={field.value}
@@ -25,13 +26,17 @@ const RadioField = ({ label, ...props }) => {
               <Radio value="male"><span className={`${theme == "dark" ? " text-white" : " text-black"}`}>Male</span></Radio>
               <Radio  value="female"><span className={`${theme == "dark" ? " text-white" : " text-black"}`}>Female</span></Radio>
             </Radio.Group>
-          </label>
+           </div>
         </div>
-        <div>
+        <div >
+          <label htmlFor={props.name}> </label>
+          <div>
           {meta.touched && meta.error ? (
             <div className="error block text-red-500 text-sm">{meta.error}</div>
           ) : null}
         </div>
+      </div>
+      
       </div>
     </>
   )
