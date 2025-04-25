@@ -3,17 +3,15 @@ import * as Yup from 'yup';
 export const validate = Yup.object({
   firstName: Yup.string()
     .matches(/^[A-Za-z]+$/, 'Only alphabets are allowed')
-    .max(15, 'Must be 15 characters or less')
     .required('Please enter your first name'),
   lastName: Yup.string()
     .matches(/^[A-Za-z]+$/, 'Only alphabets are allowed')
-    .max(10, 'Must be 10 characters or less')
     .required('Please enter your last name'),
   email: Yup.string()
     .email('Invalid email address')
     .required('Please enter your email address'),
   contact: Yup.string()
-    .min(11, 'Must be 11 characters ')
+    .min(11, 'Must be 11 characters')
     .required('Please enter your contact number'),
   age: Yup.string()
     .required('Please enter your age'),
