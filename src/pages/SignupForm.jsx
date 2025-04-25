@@ -41,7 +41,7 @@ const SignupForm = () => {
           <div className='flex flex-col items-center justify-center '>
             <div>
               <Form onSubmit={formik.handleSubmit}>
-                <div className={`p-4 rounded-xl ${theme == "dark" ? "bg-neutral-700 border-2 border-white text-gray-400" : "bg-white  border border-black text-gray-400"}`}  >
+                <div className={`p-4 rounded-xl ${theme == "dark" ? "bg-neutral-700 border-2 border-white text-white" : "bg-white  border border-black text-black"}`}  >
                   <div className='flex items-center justify-center md:gap-10 gap-6 my-3'>
                     <h1 className='md:text-3xl text-xl text-center font-semibold'>Sign Up</h1>
                     <div className="relative">
@@ -85,16 +85,14 @@ const SignupForm = () => {
                       name="age"
                       type="number"
                     />
-                 
+
                     <div className='flex gap-4 items-center'>
-                      <p className='font-medium '>Gender :</p>
-                   <RadioField
-                   name="gender"
-                 
-                   />
+                      <p >Gender :</p>
+                      <RadioField
+                        name="gender"
+                      />
                     </div>
-                   
-                    
+
                     <div>
                       <SelectField label="Job Type :" name="job">
                         <option value=""></option>
@@ -102,7 +100,7 @@ const SignupForm = () => {
                         <option value="job">Job</option>
                       </SelectField>
                     </div>
-                   
+
                     <div>
                       <SelectField label="Location :" name="location">
                         <option value=""></option>
@@ -111,7 +109,7 @@ const SignupForm = () => {
                       </SelectField>
                     </div>
                     <div className=' md:gap-4'>
-                      <label className='font-medium '>DOB : </label>
+                      <label >DOB : </label>
                       <DatePicker
                         type="date"
                         name="date"

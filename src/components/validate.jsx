@@ -2,7 +2,6 @@ import * as Yup from 'yup';
 
 export const validate = Yup.object({
   firstName: Yup.string()
-  .trim()
     .matches(/^[A-Za-z]+$/, 'Only alphabets are allowed')
     .max(15, 'Must be 15 characters or less')
     .required('Please enter your first name'),
