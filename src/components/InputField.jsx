@@ -10,8 +10,7 @@ const Inputfield = ({ label, ...props }) => {
                 <label className='' htmlFor={props.name}>{label}</label>
                 <div className='dark:bg-[#F0F0F0]'>
                 <Input variant="filled" {...field} {...props} />
-                </div>
-                   
+                </div>           
             </div>
             {meta.touched && meta.error ? (
                 <div className="error text-red-500 text-sm">{meta.error}</div>

@@ -7,7 +7,7 @@ const SelectField = ({ label, ...props }) => {
         <>
             <div className='flex flex-col justify-center  md:w-[500px] w-72  '>
                 <label className='' htmlFor={props.name}>{label}</label>
-                <select className='md:w-[500px]  font-medium p-1 outline-none dark:bg-[#F0F0F0]' {...field} {...props} />
+                <select className='md:w-[500px]  font-medium p-1 outline-none dark:text-black dark:bg-[#E2E2E2] ' {...field} {...props} />
             </div>
             {meta.touched && meta.error ? (
                 <div className="error text-red-500 text-sm">{meta.error}</div>

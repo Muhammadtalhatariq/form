@@ -23,8 +23,7 @@ const RadioField = ({ label, ...props }) => {
             >
               <Radio value="male"><span className={`${theme == "dark" ? " text-white" : " text-black"}`}>Male</span></Radio>
               <Radio  value="female"><span className={`${theme == "dark" ? " text-white" : " text-black"}`}>Female</span></Radio>
-            </Radio.Group>
-          
+            </Radio.Group>     
         </div>
         <div>
           <label htmlFor={props.name}> </label>
@@ -34,7 +33,6 @@ const RadioField = ({ label, ...props }) => {
           ) : null}
         </div>
       </div>
-      
       </div>
     </>
   )
