@@ -85,14 +85,12 @@ const SignupForm = () => {
                       name="age"
                       type="number"
                     />
- <p >Gender :</p>
+                    <p >Gender :</p>
                     <div className='flex gap-4 items-center'>
-                     
                       <RadioField
                         name="gender"
                       />
                     </div>
-
                     <div>
                       <SelectField label="Job Type :" name="job">
                         <option value=""></option>
@@ -100,7 +98,6 @@ const SignupForm = () => {
                         <option value="job">Job</option>
                       </SelectField>
                     </div>
-
                     <div>
                       <SelectField label="Location :" name="location">
                         <option value=""></option>
