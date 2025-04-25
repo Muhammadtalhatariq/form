@@ -1,5 +1,5 @@
-import React from 'react'
-import Inputfield from '../components/inputfield'
+import React from 'react';
+import Inputfield from '../components/inputfield';
 import { Formik, Form, } from 'formik';
 import RadioField from '../components/RadioField';
 import SelectField from '../components/SelectField';
@@ -8,8 +8,10 @@ import { validate } from '../components/validate';
 import { useTheme } from '../Context/ThemeContext';
 import { CiDark, CiLight } from "react-icons/ci";
 import Cheakbox from '../components/Cheakbox';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignupForm = () => {
+  const notify = () => toast("Form submit successfully");
   const [theme, setTheme] = useTheme()
   console.log(theme);
   return (
@@ -29,6 +31,7 @@ const SignupForm = () => {
         }}
         validationSchema={validate}
         onSubmit={(values) => {
+          notify()
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
           }, 2000);
@@ -110,22 +113,24 @@ const SignupForm = () => {
                       <DatePicker
                         type="date"
                         name="date"
+                        
                       />
                     </div>
                     <div>
                       <label className='flex gap-3 items-center'>
-                        <Cheakbox name="ready" label="Ready for submit" />
+                        <Cheakbox  name="ready" label="Ready for submit" />
                       </label>
                     </div>
                   </div>
                   <div className='flex items-center gap-4 my-2 '>
                     <button type="button"
                       onClick={() => formik.resetForm()}
-                      className='py-2 px-4 hover:bg-green-500 bg-green-200 rounded-xl font-semibold hover:text-white duration-500'>Reset</button>
+                      className='py-2 px-4 hover:bg-green-500 bg-green-200 rounded-xl font-semibold hover:text-white duration-500 cursor-pointer'>Reset</button>
                     <button
-                      className='py-2 px-4 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-xl' type='submit'>
+                      className='py-2 px-4 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-xl cursor-pointer' type='submit'>
                       Submit</button>
                   </div>
+                  <ToastContainer/>
                 </div>
               </Form>
             </div>

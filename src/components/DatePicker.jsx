@@ -7,8 +7,8 @@ const DateField = ({ ...props }) => {
   return (
     <>
       <div className='md:flex md:flex-col md:w-[500px] w-72'>
-        <div className='dark:bg-[#F0F0F0]'>
-          <Input className='w-68 ' variant="filled" {...field} {...props} />
+        <div className='dark:bg-[#F0F0F0] dark:text-black'>
+          <Input className='w-68' variant="filled" {...field} {...props} />
         </div>
         <div>
           {meta.touched && meta.error ? (

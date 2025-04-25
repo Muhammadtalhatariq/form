@@ -8,7 +8,7 @@ const Inputfield = ({ label, ...props }) => {
         <>
             <div className='flex flex-col md:w-[500px] w-72'>
                 <label className='' htmlFor={props.name}>{label}</label>
-                <div className='dark:bg-[#F0F0F0]'>
+                <div className='dark:bg-[#F0F0F0] dark:text-black'>
                 <Input variant="filled" {...field} {...props} />
                 </div>           
             </div>
