@@ -10,6 +10,16 @@ import { CiDark, CiLight } from "react-icons/ci";
 import Cheakbox from '../components/Cheakbox';
 import { ToastContainer, toast } from 'react-toastify';
 
+const countries = [
+  { value: 'us', label: 'United States' },
+  { value: 'pak', label: 'Pakistan' },
+  { value: 'other', label: 'Other' },
+];
+const jobs = [
+  { value: 'intern', label: 'Intern' },
+  { value: 'job', label: 'Job' },
+
+];
 const SignupForm = () => {
   const notify = () => toast("Form submit successfully");
   const [theme, setTheme] = useTheme()
@@ -95,30 +105,36 @@ const SignupForm = () => {
                       />
                     </div>
                     <div>
-                      <SelectField label="Job Type :" name="job">
-                        <option value=""></option>
-                        <option value="intern">Intern</option>
-                        <option value="job">Job</option>
-                      </SelectField>
-                    </div>
-                    <div>
-                      <SelectField label="Location :" name="location">
-                        <option value=""></option>
-                        <option value="pakistan">Pakistan</option>
-                        <option value="other">Other</option>
-                      </SelectField>
+                      <h1>Location :</h1>
+                      <SelectField
+                        name="location"
+                        label="Select Country"
+                        options={countries}
+                        placeholder="Choose a country"
+                        required
+                      />
+                      <div>
+                        <h1>Job Type :</h1>
+                        <SelectField
+                          name="job"
+                          label="Select job type"
+                          options={jobs}
+                          required
+                        />
+                      </div>
+
                     </div>
                     <div className=' md:gap-4'>
                       <label >DOB : </label>
                       <DatePicker
                         type="date"
                         name="date"
-                        
+
                       />
                     </div>
                     <div>
                       <label className='flex gap-3 items-center'>
-                        <Cheakbox  name="ready" label="Ready for submit" />
+                        <Cheakbox name="ready" label="Ready for submit" />
                       </label>
                     </div>
                   </div>
@@ -130,7 +146,7 @@ const SignupForm = () => {
                       className='py-2 px-4 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-xl cursor-pointer' type='submit'>
                       Submit</button>
                   </div>
-                  <ToastContainer/>
+                  <ToastContainer />
                 </div>
               </Form>
             </div>

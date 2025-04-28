@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 
 export const validate = Yup.object({
   firstName: Yup.string()
-    .matches(/^[A-Za-z]+$/, 'Only alphabets are allowed')
+    .matches(/^[A-Za-z]+( [A-Za-z]+)*$/, 'Only one space allow between words')
     .required('Please enter your first name'),
   lastName: Yup.string()
     .matches(/^[A-Za-z]+$/, 'Only alphabets are allowed')
@@ -29,7 +29,7 @@ export const validate = Yup.object({
     .required('Please select your job type'),
   location: Yup.string()
     .oneOf(
-      ['pakistan', 'other'],
+      ['us','pak', 'other'],
       'Invalid location'
     )
     .required('Please select your location'),
