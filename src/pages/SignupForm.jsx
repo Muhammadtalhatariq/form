@@ -9,7 +9,7 @@ import { useTheme } from "../Context/ThemeContext";
 import { CiDark, CiLight } from "react-icons/ci";
 import Cheakbox from "../components/Cheakbox";
 import { ToastContainer, toast } from "react-toastify";
-
+import { Spin } from "antd";
 const countries = [
   { value: "us", label: "United States" },
   { value: "pak", label: "Pakistan" },
@@ -72,7 +72,11 @@ const SignupForm = () => {
   const [theme, setTheme] = useTheme();
 
   if (loading) {
-    return <div>Loading...</div>;
+     return (
+      <div className="flex justify-center items-center h-screen">
+        <Spin size="large" tip="Loading initial data..." />
+      </div>
+    );
   }
 
   return (
