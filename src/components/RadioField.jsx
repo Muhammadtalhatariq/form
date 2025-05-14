@@ -3,7 +3,7 @@ import { useField, Field, useFormikContext } from 'formik';
 import { Radio } from 'antd'
 import { useTheme } from '../Context/ThemeContext';
 
-const RadioField = ({ label, ...props }) => {
+const RadioField = ({ ...props }) => {
   const [field, meta] = useField(props);
   const { setFieldValue } = useFormikContext();
   const [theme, setTheme] = useTheme()

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Inputfield from "../components/inputfield";
+import Inputfield from "../components/InputField.jsx";
 import { Formik, Form } from "formik";
-import RadioField from "../components/RadioField";
-import SelectField from "../components/SelectField";
-import DatePicker from "../components/DatePicker";
+import RadioField from "../components/RadioField.jsx";
+import SelectField from "../components/SelectField.jsx";
+import DatePicker from "../components/DatePicker.jsx";
 import { validate } from "../components/validate";
 import { useTheme } from "../Context/ThemeContext";
 import { CiDark, CiLight } from "react-icons/ci";

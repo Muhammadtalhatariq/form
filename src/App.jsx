@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SignupForm from './pages/SignupForm'
+import SignupForm from './pages/SignupForm.jsx'
 
 const App = () => {
   return (
