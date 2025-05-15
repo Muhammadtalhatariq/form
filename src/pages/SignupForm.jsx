@@ -50,7 +50,7 @@ const SignupForm = () => {
           email: data.email,
           contact: "03023245670",
           age: 30,
-          gender: "male ",
+          gender: "male",
           location: "us",
           job: "intern",
           date: "1990-01-01",
